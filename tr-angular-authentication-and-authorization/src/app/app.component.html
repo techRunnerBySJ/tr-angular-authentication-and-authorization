@@ -1,0 +1,13 @@
+<h1>Angular Authentication Example</h1>
+
+<div *ngIf="authService.isAuthenticated(); else loginForm">
+  <p>Welcome, user!</p>
+  <button (click)="logout()">Logout</button>
+</div>
+
+<ng-template #loginForm>
+  <h2>Login</h2>
+  <input type="text" [(ngModel)]="username" placeholder="Username">
+  <input type="password" [(ngModel)]="password" placeholder="Password">
+  <button (click)="login()">Login</button>
+</ng-template>
